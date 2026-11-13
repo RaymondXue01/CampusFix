@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:id="@+id/cardView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Section (always visible) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Priority Bar -->
+            <!-- Color changes based on priority: Red=High, Orange=Medium, Green=Low/4 -->
+            <View
+                android:id="@+id/priorityBar"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:background="#FF0000" />
+
+            <!-- Content Area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/issueTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Title"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Category -->
+                <TextView
+                    android:id="@+id/issueCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginTop="4dp" />
+
+                <!-- Status and Priority Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Warning Icon -->
+                    <!-- Shows for Open and In Progress issues (hidden for Closed/Resolved) -->
+                    <ImageView
+                        android:id="@+id/warningIcon"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_warning"
+                        android:visibility="gone"
+                        android:layout_marginEnd="4dp" />
+
+                    <TextView
+                        android:id="@+id/issueStatus"
+                        android:text="Status"
+                        android:layout_marginEnd="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/issuePriority"
+                        android:text="Priority"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <!-- Watch badge: only visible when current user is watching-->
+                    <TextView
+                        android:id="@+id/tvWatchBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Watching"
+                        android:textSize="11sp"
+                        android:textColor="@android:color/white"
+                        android:background="#FF6200EE"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginStart="8dp"
+                        android:visibility="gone" />
+                    <!-- Upvote Badge - shows upvote count -->
+                    <!-- Upvote Badge - shows upvote count with up arrow -->
+                    <TextView
+                        android:id="@+id/tvUpvoteBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="11sp"
+                        android:textColor="@android:color/white"
+                        android:background="#FF9800"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== EXPANDABLE DETAIL SECTION ==================== -->
+        <!-- Hidden by default, shows when user taps the card -->
+        <LinearLayout
+            android:id="@+id/detailSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/light_gray"
+            android:visibility="gone">
+
+            <!-- Issue Location -->
+            <TextView
+                android:id="@+id/detailLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location: "
+                android:textSize="14sp"
+                android:paddingBottom="4dp" />
+
+            <!-- Issue Description -->
+            <TextView
+                android:id="@+id/detailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description: "
+                android:textSize="14sp"
+                android:paddingBottom="4dp" />
+
+            <!-- Timestamp when issue was reported -->
+            <TextView
+                android:id="@+id/detailTimestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reported: "
+                android:textSize="12sp"
+                android:paddingBottom="4dp" />
+
+            <!-- Creator of the issue -->
+            <TextView
+                android:id="@+id/detailCreator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By: "
+                android:textSize="12sp" />
+
+            <!-- View Details button - Only visible when the card is expanded -->
+            <Button
+                android:id="@+id/btnViewDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Details &amp; Updates"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

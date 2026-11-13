@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
+
+    <!-- declare data block with a variable in the xml file to hold the viewmodel -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.testingapp.viewmodel.MainViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorOnBackground">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.title}"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <!-- Quit Button -->
+        <Button
+            android:id="@+id/quit_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Quit"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/start_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

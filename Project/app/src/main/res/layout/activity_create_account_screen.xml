@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    tools:context=".view.CreateAccountScreen">
+    <!-- ViewModel -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.testingapp.viewmodel.CreateAccountViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorTertiary">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/create_account_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.title}"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@{viewModel.emailHint}"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_account_text" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@{viewModel.passHint}"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_input" />
+
+        <!-- Staff Confirmation -->
+
+        <TextView
+            android:id="@+id/is_staff_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="I am a Staff Member"
+            android:textColor="@color/default_secondary"
+            app:layout_constraintEnd_toStartOf="@id/staff_checkbox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password_input" />
+
+        <CheckBox
+            android:id="@+id/staff_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/is_staff_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password_input"/>
+
+
+        <!-- Create Account Button -->
+        <Button
+            android:id="@+id/create_account_button"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:backgroundTint="?attr/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/staff_checkbox" />
+
+        <!-- Feedback -->
+        <TextView
+            android:id="@+id/creation_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.feedback}"
+            android:layout_marginTop="16dp"
+            android:textColor="?attr/colorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_account_button" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

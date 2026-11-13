@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name ="splashBackground">#4A148C</color>
+    <color name ="grey">#1E000000</color>
+    <color name ="green">#20BF55</color>
+
+    <!-- Theme colors -->
+    <color name="dark_background">#121212</color>
+    <color name="dark_primary">#1E1E1E</color>
+    <color name="dark_secondary">#EAEAEA</color>
+    <color name="dark_accent">#4CAF50</color>
+    <color name="dark_tertiary">#F1F1F1</color>
+
+    <color name="blue_background">#F5F9FF</color>
+    <color name="blue_primary">#E3F2FD</color>
+    <color name="blue_secondary">#1C2A39</color>
+    <color name="blue_accent">#1976D2</color>
+    <color name="blue_tertiary">#EAF2FB</color>
+
+    <color name="green_background">#F4FBF6</color>
+    <color name="green_primary">#DFF3E3</color>
+    <color name="green_secondary">#1F2D24</color>
+    <color name="green_accent">#2E7D32</color>
+    <color name="green_tertiary">#E8F5E9</color>
+
+    <color name="default_background">#FFF7FB</color>
+    <color name="default_primary">#EDE7F6</color>
+    <color name="default_secondary">#2A1B3D</color>
+    <color name="default_accent">#BEA7E0</color>
+    <color name="default_tertiary">#F3EFFF</color>
+
+    <!-- Status colors -->
+    <color name="status_open">#4CAF50</color>
+    <color name="status_in_progress">#FF9800</color>
+    <color name="status_resolved">#2196F3</color>
+    <color name="status_closed">#9E9E9E</color>
+
+    <color name="priority_high">#F44336</color>
+    <color name="priority_medium">#FFC107</color>
+    <color name="priority_low">#8BC34A</color>
+
+    <color name="design_default_color_primary">#6200EE</color>
+    <color name="teal_200">#03DAC5</color>
+
+    <color name="gray">#9E9E9E</color>
+
+    <color name="light_gray">#F5F5F5</color>
+</resources>

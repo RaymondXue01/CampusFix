@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TestingApp</string>
+    <string-array name="category_level">
+        <item>Category 1</item>
+        <item>Category 2</item>
+        <item>Category 3</item>
+        <item>Category 4</item>
+    </string-array>
+
+    <string-array name="priority_level">
+        <item>Priority 1</item>
+        <item>Priority 2</item>
+        <item>Priority 3</item>
+        <item>Priority 4</item>
+    </string-array>
+
+    <string-array name="theme">
+        <item>Default Theme</item>
+        <item>Dark Theme</item>
+        <item>Blue Theme</item>
+        <item>Green Theme</item>
+    </string-array>
+</resources>
